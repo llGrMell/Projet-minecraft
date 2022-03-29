@@ -6,20 +6,8 @@
 
 - [Prérequis](#p0)
 - [Création des serveurs](#p1)
-    - [Récupération des scripts](#p1.1)
+    - [Serveur Parent](#p1.1)
     - [Initialisation](#p1.2)
-    - [Création d’un serveur Minecraft](#p1.3)
-- [Lancement et arrêt des serveurs](#p2)
-    - [Récupération des scripts](#p2.1)
-    - [Lancer un serveur](#p2.2)
-    - [Arreter un serveur](#p2.3)
-- [Création de la backup](#p3) 
-    - [Prérequis](#p3.1)
-    - [Récupération du script](#p3.2)
-- [Monitoring](#p4)
-- [Modification Serveur](#p5)
-    - [Ajouter des admins](#p5.1)
-    - [Choisir le serveur prioritaire](#p5.2)
 
 ## Prérequis <a name="p0"></a>
 
@@ -29,4 +17,44 @@ Go de RAM : 3GB (minimum) pour un serveur minecraft
 
 OS : Rasbian OS
 
-Backup : Clé usb
+Backup : Clé USB
+
+## Création des serveurs <a name="p1"></a>
+
+Notre probleme sur se projet est de créer plusieur serveur minecaft. Pour répondre à ce problemes, on a eu comme idée de creer UN serveur Minecraft pour le copier coller.
+
+<br></br>
+
+Pour commencer, on a créé les dossiers "/srv/mc/serveur_parent" pour installer à l'interieur le premier serveur minecraft.
+```
+/srv/mc/serveur_parent
+```
+<br></br>
+
+Maintenant qu'une fois le serveur Minecraft a été installé, nous devons le copier et le coller. Pour cela, on a créer un script dans un nouveau dossier.
+```
+/srv/mc/new_server
+/srv/mc/new_server # nano (oe.sh)
+```
+```
+la commande dans le oe.sh
+```
+Quant on va lancer le (oe.sh) celui-ci va copier le Serveur Parent pour le coller dans le dossier /mc avec les modifications que nous avons mis. 
+
+<br></br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
