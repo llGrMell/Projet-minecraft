@@ -113,7 +113,45 @@ Pour lancer le script, suffit juste de lancer le ```./backup.sh```.
 
 ### Automatique  <a name="p2.2"></a>
 
-Pour faire une sauvegarde automatique 
+Pour faire une sauvegarde automatique il suffits d'éditer la table cron, en exécuter la commande:
+``` 
+crontab -e
+```
+
+Cette commande a pour effet de lancer l'éditeur présentant la table actuelle. Chaque entrée de la table (chaque ligne) correspond à une tâche à exécuter et est notée de la façon suivante:
+mm hh jj MMM JJJ
+
+Dans cette syntaxe:
+
+mm représente les minutes (de 0 à 59)
+
+hh représente l'heure (de 0 à 23)
+
+jj représente le numéro du jour du mois (de 1 à 31)
+
+MMM représente le numéro du mois (de 1 à 12) ou l'abréviation du nom du mois (jan, feb, mar, apr, ...)
+
+JJJ représente l'abréviation du nom du jour ou le chiffre correspondant au jour de la semaine (0 représente le dimanche, 1 représente le lundi, ...)
+
+En faisant cette commande: 
+``` 
+11 * * * * /srv/mc/backup/backup.sh
+```
+Cela veut dire que chaque heure passée de 11 minutes il va lancer le script ```backup.sh``` permettant de sauvegarder dans la clé USB. 
+
+<br></br>
+
+Quelques autres exemples :
+
+Tous les lundis à 22h28:
+``` 
+ 30 23 1 * * /srv/mc/backup/backup.sh
+```
+
+Tous les premiers du mois à 23h30:
+``` 
+11 * * * * /srv/mc/backup/backup.sh
+```
 
 
 
